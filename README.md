@@ -7,7 +7,7 @@ This a simle alarm clock with dawn effect based on AVR ATmega8.
 ## Features
 * It uses RTC on its asyncronic timer only external quartz 32768Hz is necessary.
 * Gamma corrected (logarithmicall) LED PWM control.
-* Supports any light sourse via USB output up to 1A. **Warning** there is no current limitation or fuse on the output.
+* Supports any light sourse via USB output up to 1A (depends on transistor). **Warning** there is no current limitation, if R3 is not installed.
 * Alarm can be turned on/off for each day of week.
 * Selectable dawn length.
 * No annoying beeper ;)
