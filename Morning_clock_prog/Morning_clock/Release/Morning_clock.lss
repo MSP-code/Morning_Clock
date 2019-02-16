@@ -933,7 +933,7 @@ Disassembly of section .text:
  7a0:	90 e0       	ldi	r25, 0x00	; 0
  7a2:	80 d0       	rcall	.+256    	; 0x8a4 <eeprom_read_byte>
  7a4:	83 30       	cpi	r24, 0x03	; 3
- 7a6:	c1 f5       	brne	.+112    	; 0x818 <__vector_9+0x316>
+ 7a6:	21 f4       	brne	.+8      	; 0x7b0 <__vector_9+0x2ae>
  7a8:	61 e0       	ldi	r22, 0x01	; 1
  7aa:	89 e0       	ldi	r24, 0x09	; 9
  7ac:	90 e0       	ldi	r25, 0x00	; 0
