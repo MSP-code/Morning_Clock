@@ -381,7 +381,7 @@ ISR(TIMER0_OVF_vect)
 				temp|=segment[digits[current_digit]]; 					
 	}
 	brightness_counter-=eeprom_read_byte(&brightness);// check the brightness 
-	// turn on digi, if brightness 0
+	// turn on digit, if brightness 0
 	if(!brightness_counter)
 	{
 			brightness_counter=2;
@@ -491,8 +491,9 @@ ISR(TIMER0_OVF_vect)
 						if (eeprom_read_byte(&brightness)==3)
 						{
 							eeprom_write_byte(&brightness,1);
-							brightness_counter=2;
+							
 						}
+						brightness_counter=2;
 						break;
 						//set indication 1- constant, 0- 60 sec
 					case Indication:
