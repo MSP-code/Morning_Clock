@@ -487,12 +487,14 @@ ISR(TIMER0_OVF_vect)
 						break;
 						//correct brightness
 					case Bright:
-						eeprom_write_byte(&brightness, eeprom_read_byte(&brightness)+1);
-						if (eeprom_read_byte(&brightness)==3)
+						
+						if (eeprom_read_byte(&brightness)+1==3)
 						{
 							eeprom_write_byte(&brightness,1);
-							
 						}
+						else
+						eeprom_write_byte(&brightness, eeprom_read_byte(&brightness)+1);
+						
 						brightness_counter=2;
 						break;
 						//set indication 1- constant, 0- 60 sec
