@@ -42,6 +42,6 @@ Modes are given in switching order, and are changed by pressing **Set** button.
 * When alarm is working (light is turned on) is can be switched off by short press of **H button or M/D button**.
 * Press **H button or M/D button** to turn on display when indication mode 0 is selected.
 ## TBD (probably will be added):
-* Add battery backup (**!**  is not supported by currect pcb);
-* Add speaker and make beeps when alarm time is on (**!**  Is not supported by currect pcb);
+* Add battery backup (**!**  is not supported by current pcb);
+* Add speaker and make beeps when alarm time is on (**!**  Is not supported by current pcb);
 * Add time correction per day.
