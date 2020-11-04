@@ -1,4 +1,4 @@
-// SignallerK 2019
+// SignallerK 2019 -v 1.3.5
 #include <avr/io.h>
 #include <avr/interrupt.h>
 #include <avr/sleep.h>
@@ -8,6 +8,7 @@
 #include <avr/pgmspace.h>
 #include "Led_PWM_256.h"
 #include "morning_clock.h"
+#include <util/atomic.h>
 
 //time structure
 typedef struct{
@@ -488,6 +489,8 @@ ISR(TIMER0_OVF_vect)
 						//correct brightness
 					case Bright:
 						
+					ATOMIC_BLOCK(ATOMIC_RESTORESTATE)
+					{
 						if (eeprom_read_byte(&brightness)+1==3)
 						{
 							eeprom_write_byte(&brightness,1);
@@ -496,6 +499,7 @@ ISR(TIMER0_OVF_vect)
 						eeprom_write_byte(&brightness, eeprom_read_byte(&brightness)+1);
 						
 						brightness_counter=2;
+					}
 						break;
 						//set indication 1- constant, 0- 60 sec
 					case Indication:
