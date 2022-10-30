@@ -12,6 +12,7 @@ This a simle alarm clock with dawn effect based on AVR ATmega8.
 * Selectable dawn length.
 * No annoying beeper ;)
 * All constant settings are stored in EEPROM
+* In case of power failure, clock will continue to operate from battery (3xAAA)
 ## Menu Modes/Manual
 Modes are given in switching order, and are changed by pressing **Set** button.
 * Clock - **default mode** - shows current time. Second dot (HH.MM) is blinking in all modes with frequency 0.5Hz indicating that clock is working. Buttons operations:
@@ -42,6 +43,5 @@ Modes are given in switching order, and are changed by pressing **Set** button.
 * When alarm is working (light is turned on) is can be switched off by short press of **H button or M/D button**.
 * Press **H button or M/D button** to turn on display when indication mode 0 is selected.
 ## TBD (probably will be added):
-* Add battery backup (**!**  is not supported by current pcb);
 * Add speaker and make beeps when alarm time is on (**!**  Is not supported by current pcb);
 * Add time correction per day.

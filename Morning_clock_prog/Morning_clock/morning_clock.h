@@ -23,7 +23,11 @@ FUSES =
 //Port D buttons port
 #define BUT_PORT PORTD
 #define BUT_DDR DDRD
-
+//Port C battery port
+#define BAT_PORT PORTC
+#define BAT_DDR DDRC
+#define BAT_PIN PINC
+#define BAT_CONN 5
 
 //Buttons macro and defines
 
@@ -33,18 +37,19 @@ FUSES =
 #define BUTTON_DEBOUNCING 3 // debounce const ~10ms
 
 //Basic parameters defines
-#define BRIGHTNESS_INIT 2 //start value of brightness (2 max, 1 dim)
+#define BRIGHTNESS_INIT 1 //start value of brightness (2 max, 1 dim)
 #define indication_period 60//sec  if indication flag 1, other cinst
 //Other
 #define	PWM_TOP 0xFF	//PWM_TOP don't change
-
+#define CLEAR_DOT 0b00000000
+#define SET_DOT 0b10000000
 
 // EEPROM Variables
 unsigned char EEMEM dawn_hour =6; //alarm hour
-unsigned char EEMEM dawn_minute =45;//alarm minute
+unsigned char EEMEM dawn_minute =50;//alarm minute
 unsigned char EEMEM brightness = BRIGHTNESS_INIT; 
-unsigned char EEMEM indication_flag = 0;// 1 is constant indication, 0 -one 1 minute
-unsigned char EEMEM dawn_period = 30; //dawn period from 15 to 30 step 5
+unsigned char EEMEM indication_flag = 1;// 1 is constant indication, 0 -one 1 minute
+unsigned char EEMEM dawn_period = 25; //dawn period from 15 to 30 step 5
 unsigned char EEMEM week_day_al[7]={1,1,1,1,1,0,0}; //week days alarm set
 
 #define DRV_PORT PORTC

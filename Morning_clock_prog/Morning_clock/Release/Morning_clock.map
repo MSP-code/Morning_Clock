@@ -126,6 +126,8 @@ LOAD c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/b
 LOAD c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr4\libc.a
 LOAD C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.150/gcc/dev/atmega8a/avr4\libatmega8a.a
 END GROUP
+                0x00000000                __TEXT_REGION_ORIGIN__ = DEFINED (__TEXT_REGION_ORIGIN__)?__TEXT_REGION_ORIGIN__:0x0
+                0x00800060                __DATA_REGION_ORIGIN__ = DEFINED (__DATA_REGION_ORIGIN__)?__DATA_REGION_ORIGIN__:0x800060
                 0x00002000                __TEXT_REGION_LENGTH__ = DEFINED (__TEXT_REGION_LENGTH__)?__TEXT_REGION_LENGTH__:0x2000
                 0x0000ffa0                __DATA_REGION_LENGTH__ = DEFINED (__DATA_REGION_LENGTH__)?__DATA_REGION_LENGTH__:0xffa0
                 0x00010000                __EEPROM_REGION_LENGTH__ = DEFINED (__EEPROM_REGION_LENGTH__)?__EEPROM_REGION_LENGTH__:0x10000
@@ -224,7 +226,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000      0x8ca
+.text           0x00000000      0x936
  *(.vectors)
  .vectors       0x00000000       0x26 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.150/gcc/dev/atmega8a/avr4/crtatmega8a.o
                 0x00000000                __vector_default
@@ -313,35 +315,35 @@ END GROUP
                 0x000001ac        0x8 morning_clock.o
                 0x000001ac                SPI_MasterTransmit
  .text.startup.main
-                0x000001b4      0x172 morning_clock.o
+                0x000001b4      0x1c6 morning_clock.o
                 0x000001b4                main
  .text.__vector_4
-                0x00000326      0x174 morning_clock.o
-                0x00000326                __vector_4
+                0x0000037a      0x17a morning_clock.o
+                0x0000037a                __vector_4
  .text.__vector_1
-                0x0000049a       0x34 morning_clock.o
-                0x0000049a                __vector_1
+                0x000004f4       0x34 morning_clock.o
+                0x000004f4                __vector_1
  .text.__vector_2
-                0x000004ce       0x34 morning_clock.o
-                0x000004ce                __vector_2
+                0x00000528       0x34 morning_clock.o
+                0x00000528                __vector_2
  .text.__vector_9
-                0x00000502      0x372 morning_clock.o
-                0x00000502                __vector_9
+                0x0000055c      0x384 morning_clock.o
+                0x0000055c                __vector_9
  .text.libgcc.div
-                0x00000874       0x28 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr4\libgcc.a(_udivmodhi4.o)
-                0x00000874                __udivmodhi4
+                0x000008e0       0x28 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr4\libgcc.a(_udivmodhi4.o)
+                0x000008e0                __udivmodhi4
  .text.avr-libc
-                0x0000089c       0x10 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.150/gcc/dev/atmega8a/avr4\libatmega8a.a(eerd_byte.o)
-                0x0000089c                eeprom_read_byte
+                0x00000908       0x10 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.150/gcc/dev/atmega8a/avr4\libatmega8a.a(eerd_byte.o)
+                0x00000908                eeprom_read_byte
  .text.avr-libc
-                0x000008ac       0x1a C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.150/gcc/dev/atmega8a/avr4\libatmega8a.a(eewr_byte.o)
-                0x000008ac                eeprom_write_byte
-                0x000008ae                eeprom_write_r18
-                0x000008c6                . = ALIGN (0x2)
+                0x00000918       0x1a C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.150/gcc/dev/atmega8a/avr4\libatmega8a.a(eewr_byte.o)
+                0x00000918                eeprom_write_byte
+                0x0000091a                eeprom_write_r18
+                0x00000932                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x000008c6        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr4\libgcc.a(_exit.o)
-                0x000008c6                _exit
-                0x000008c6                exit
+ .fini9         0x00000932        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr4\libgcc.a(_exit.o)
+                0x00000932                _exit
+                0x00000932                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -360,67 +362,71 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x000008c6        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr4\libgcc.a(_exit.o)
+ .fini0         0x00000932        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr4\libgcc.a(_exit.o)
  *(.fini0)
-                0x000008ca                _etext = .
+                0x00000936                _etext = .
 
-.data           0x00800060       0x16 load address 0x000008ca
+.data           0x00800060       0x18 load address 0x00000936
                 0x00800060                PROVIDE (__data_start, .)
  *(.data)
  *(.data*)
- .data.brightness_counter
+ .data.update_display_flag
                 0x00800060        0x1 morning_clock.o
-                0x00800060                brightness_counter
- .data.indication_counter
+                0x00800060                update_display_flag
+ .data.brightness_counter
                 0x00800061        0x1 morning_clock.o
-                0x00800061                indication_counter
- .data.dawn_on  0x00800062        0x1 morning_clock.o
-                0x00800062                dawn_on
- .data.segment  0x00800063       0x13 morning_clock.o
-                0x00800063                segment
+                0x00800061                brightness_counter
+ .data.indication_counter
+                0x00800062        0x1 morning_clock.o
+                0x00800062                indication_counter
+ .data.dawn_on  0x00800063        0x1 morning_clock.o
+                0x00800063                dawn_on
+ .data.segment  0x00800064       0x13 morning_clock.o
+                0x00800064                segment
  *(.gnu.linkonce.d*)
  *(.rodata)
  *(.rodata*)
  *(.gnu.linkonce.r*)
-                0x00800076                . = ALIGN (0x2)
-                0x00800076                _edata = .
-                0x00800076                PROVIDE (__data_end, .)
+                0x00800078                . = ALIGN (0x2)
+ *fill*         0x00800077        0x1 
+                0x00800078                _edata = .
+                0x00800078                PROVIDE (__data_end, .)
 
-.bss            0x00800076       0x11
-                0x00800076                PROVIDE (__bss_start, .)
+.bss            0x00800078       0x11
+                0x00800078                PROVIDE (__bss_start, .)
  *(.bss)
  *(.bss*)
  .bss.button_delay
-                0x00800076        0x2 morning_clock.o
-                0x00800076                button_delay
+                0x00800078        0x2 morning_clock.o
+                0x00800078                button_delay
  .bss.h_pressed
-                0x00800078        0x1 morning_clock.o
-                0x00800078                h_pressed
- .bss.m_pressed
-                0x00800079        0x1 morning_clock.o
-                0x00800079                m_pressed
- .bss.PWM_SEC_Counter
                 0x0080007a        0x1 morning_clock.o
-                0x0080007a                PWM_SEC_Counter
- .bss.dawn_counter
+                0x0080007a                h_pressed
+ .bss.m_pressed
                 0x0080007b        0x1 morning_clock.o
-                0x0080007b                dawn_counter
+                0x0080007b                m_pressed
+ .bss.PWM_SEC_Counter
+                0x0080007c        0x1 morning_clock.o
+                0x0080007c                PWM_SEC_Counter
+ .bss.dawn_counter
+                0x0080007d        0x1 morning_clock.o
+                0x0080007d                dawn_counter
  *(COMMON)
- COMMON         0x0080007c        0xb morning_clock.o
-                0x0080007c                t
-                0x00800080                menu
-                0x00800081                current_digit
-                0x00800082                dawn_step
-                0x00800083                digits
-                0x00800087                PROVIDE (__bss_end, .)
-                0x000008ca                __data_load_start = LOADADDR (.data)
-                0x000008e0                __data_load_end = (__data_load_start + SIZEOF (.data))
+ COMMON         0x0080007e        0xb morning_clock.o
+                0x0080007e                t
+                0x00800082                menu
+                0x00800083                current_digit
+                0x00800084                dawn_step
+                0x00800085                digits
+                0x00800089                PROVIDE (__bss_end, .)
+                0x00000936                __data_load_start = LOADADDR (.data)
+                0x0000094e                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x00800087        0x0
+.noinit         0x00800089        0x0
                 [!provide]                PROVIDE (__noinit_start, .)
  *(.noinit*)
                 [!provide]                PROVIDE (__noinit_end, .)
-                0x00800087                _end = .
+                0x00800089                _end = .
                 [!provide]                PROVIDE (__heap_start, .)
 
 .eeprom         0x00810000        0xc
